@@ -1,16 +1,17 @@
 <template>
   <div>
     <!-- Importar o UserCard -->
+    <UserCard></UserCard>
   </div>
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
+import UserCard from './components/UserCard.vue';
 
 export default {
-  name: 'App',
+  name: 'RandomUserGenerator',
   components: {
-    // HelloWorld
+    UserCard
   }
 }
 </script>
