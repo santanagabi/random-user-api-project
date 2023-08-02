@@ -1,0 +1,1 @@
+<!-- Aqui colocar o conteúdo do user card -->
