@@ -6,16 +6,29 @@
 </template>
 
 <script>
-import UserCard from './components/UserCard.vue';
+// import axios from "axios";
+import UserCard from "./components/UserCard.vue";
 
 export default {
-  name: 'RandomUserGenerator',
+  name: "RandomUserGenerator",
+
+  data() {
+    return {
+      user: null,
+    };
+  },
+
   components: {
-    UserCard
+    UserCard,
+  },
+
+  methos: {
+    // Buscar na api usando axios
+    async fetchRandomUser() {
+      
+    }
   }
-}
+};
 </script>
 
-<style>
-
-</style>
+<style></style>
