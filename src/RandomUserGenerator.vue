@@ -24,8 +24,9 @@ export default {
 
   methos: {
     // Buscar na api usando axios
+    // Async permite que a função espere até ser executada --> uso do await
     async fetchRandomUser() {
-      
+
     }
   }
 };
