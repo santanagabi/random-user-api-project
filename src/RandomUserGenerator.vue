@@ -1,8 +1,8 @@
 <template>
   <div>
     <!-- Importar o UserCard -->
-    <button @click="fetchRandomUser()">Obter usuário aleatório</button>
-    <UserCard v-if="!user" />
+    <button @click="fetchRandomUser" class="random-user-button">Get random user</button>
+    <UserCard :user="user" />
   </div>
 </template>
 
@@ -15,7 +15,6 @@ export default {
 
   data() {
     return {
-      // O usuário começa como nulo
       user: null,
     };
   },
@@ -25,19 +24,31 @@ export default {
   },
 
   methods: {
-    // Buscar na api usando axios
-    // Async permite que a função espere até ser executada --> uso do await
     async fetchRandomUser() {
       try {
         const response = await axios.get("https://randomuser.me/api/");
-        console.log(response.data);
-        // this.user = response.data.results[0]; // Define o usuário retornado na resposta
+        this.user = response.data.results[0];
       } catch (error) {
-        console.log('Em caso de erro', error);
+        console.log("Em caso de erro", error);
       }
     },
   },
 };
 </script>
 
-<style></style>
+<style>
+.random-user-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.random-user-button:hover {
+  background-color: #45a049;
+}
+</style>
